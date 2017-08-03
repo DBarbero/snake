@@ -66,25 +66,34 @@
   function gameOver() {
     tail = 5;
     score = 0;
+    document.getElementById("score").innerHTML = `Score: ${score}`;
   }
 
   function keyPush(e) {
     switch (e.keyCode) {
       case 37:
-        velX = -1;
-        velY = 0;
+        if (velX != 1) {
+          velX = -1;
+          velY = 0;
+        }
         break;
       case 38:
-        velX = 0;
-        velY = -1;
+        if (velY != 1) {
+          velX = 0;
+          velY = -1;
+        }
         break;
       case 39:
-        velX = 1;
-        velY = 0;
+        if (velX != -1) {
+          velX = 1;
+          velY = 0;
+        }
         break;
       case 40:
-        velX = 0;
-        velY = 1;
+        if (velY != -1) {
+          velX = 0;
+          velY = 1;
+        }
         break;
     }
   }
